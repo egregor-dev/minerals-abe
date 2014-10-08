@@ -39,16 +39,18 @@ import base58
 
 __version__ = version.__version__
 
-ABE_APPNAME = "Abe"
+ABE_APPNAME = "Minerals Block Explorer"
+ABE_APPNAME_MASTER = "Abe"
 ABE_VERSION = __version__
-ABE_URL = 'https://github.com/bitcoin-abe/bitcoin-abe'
+ABE_URL = 'https://github.com/AkiraTakizawa/minerals-abe'
+ABE_URL_MASTER = 'https://github.com/bitcoin-abe/bitcoin-abe'
 
-COPYRIGHT_YEARS = '2011'
-COPYRIGHT = "Abe developers"
+COPYRIGHT_YEARS = '2014'
+COPYRIGHT = "Akira Takizawa"
 COPYRIGHT_URL = 'https://github.com/bitcoin-abe'
 
-DONATIONS_BTC = '1PWC7PNHL1SgvZaN7xEtygenKjWobWsCuf'
-DONATIONS_NMC = 'NJ3MSELK1cWnqUa6xhF2wUYAnz3RSrWXcK'
+DONATIONS_BTC = '1LDxoC4rUbgx7tQJCm1tjVxdNRbtj2YWsf'
+DONATIONS_MIN = 'MWtAGF1MZgr5ZpDMVqV4mJUtGx2R8F6eXe'
 
 TIME1970 = time.strptime('1970-01-01','%Y-%m-%d')
 EPOCH1970 = calendar.timegm(TIME1970)
@@ -57,7 +59,7 @@ EPOCH1970 = calendar.timegm(TIME1970)
 # Configurable templates may contain either.  HTML seems better supported
 # under Internet Explorer.
 DEFAULT_CONTENT_TYPE = "text/html; charset=utf-8"
-DEFAULT_HOMEPAGE = "chains";
+DEFAULT_HOMEPAGE = "chain/Minerals";
 DEFAULT_TEMPLATE = """
 <!DOCTYPE html>
 <html lang="en">
@@ -75,12 +77,13 @@ DEFAULT_TEMPLATE = """
     <p><a href="%(dotdot)sq">API</a> (machine-readable pages)</p>
     <p style="font-size: smaller">
         <span style="font-style: italic">
-            Powered by <a href="%(ABE_URL)s">%(APPNAME)s</a>
+            Powered by <a href="%(ABE_URL)s">%(APPNAME)s</a> - Based on <a href="%(ABE_URL_MASTER)s">%(ABE_APPNAME_MASTER)s</a><br/>
         </span>
         %(download)s
-        Tips appreciated!
-        <a href="%(dotdot)saddress/%(DONATIONS_BTC)s">BTC</a>
-        <a href="%(dotdot)saddress/%(DONATIONS_NMC)s">NMC</a>
+        We gratefully accept any tip in 
+        <a href="%(dotdot)saddress/%(DONATIONS_MIN)s" target="_blank">MIN</a>
+         or 
+        <a href="https://blockchain.info/address/%(DONATIONS_BTC)s" target="_blank">BTC</a>
     </p>
 </body>
 </html>
@@ -2017,13 +2020,15 @@ def create_conf():
         "template":     DEFAULT_TEMPLATE,
         "template_vars": {
             "ABE_URL": ABE_URL,
+            "ABE_URL_MASTER": ABE_URL_MASTER,
             "APPNAME": ABE_APPNAME,
+            "ABE_APPNAME_MASTER": ABE_APPNAME_MASTER,
             "VERSION": ABE_VERSION,
             "COPYRIGHT": COPYRIGHT,
             "COPYRIGHT_YEARS": COPYRIGHT_YEARS,
             "COPYRIGHT_URL": COPYRIGHT_URL,
             "DONATIONS_BTC": DONATIONS_BTC,
-            "DONATIONS_NMC": DONATIONS_NMC,
+            "DONATIONS_MIN": DONATIONS_MIN,
             "CONTENT_TYPE": DEFAULT_CONTENT_TYPE,
             "HOMEPAGE": DEFAULT_HOMEPAGE,
             },

@@ -80,9 +80,11 @@ CHAIN_CONFIG = [
     {"chain":"Hirocoin"},
     {"chain":"Bitleu"},
     {"chain":"Maxcoin"},
+    {"chain":"Minerals"},
     #{"chain":"",
     # "code3":"", "address_version":"\x", "magic":""},
     ]
+    
 
 NULL_PUBKEY_HASH = "\0" * Chain.PUBKEY_HASH_LENGTH
 NULL_PUBKEY_ID = 0
