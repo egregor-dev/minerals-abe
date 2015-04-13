@@ -17,17 +17,17 @@
 from .X11PosChain import X11PosChain
 from .. import util
 
-class Minerals(X11PosChain):
+class Mineralscoin(X11PosChain):
     """
     Experimental module for Minerals, an X11 PoW/PoS crypto currency
     """
     def __init__(chain, **kwargs):
-        chain.name = 'Minerals'
+        chain.name = 'Mineralscoin'
         chain.code3 = 'MIN'
         chain.address_version = '\x32'
         chain.script_addr_vers = '\x05'
         chain.magic = "\xa1\xa0\xa2\xa3"
-        super(Minerals, chain).__init__(**kwargs)
+        super(Mineralscoin, chain).__init__(**kwargs)
 
 #    def transaction_hash(chain, binary_tx):
 #        return util.sha256(binary_tx)

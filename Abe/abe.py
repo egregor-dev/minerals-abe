@@ -39,7 +39,7 @@ import base58
 
 __version__ = version.__version__
 
-ABE_APPNAME = "Minerals Block Explorer"
+ABE_APPNAME = "Mineralscoin Block Explorer"
 ABE_APPNAME_MASTER = "Abe"
 ABE_VERSION = __version__
 ABE_URL = 'https://github.com/AkiraTakizawa/minerals-abe'
@@ -59,7 +59,7 @@ EPOCH1970 = calendar.timegm(TIME1970)
 # Configurable templates may contain either.  HTML seems better supported
 # under Internet Explorer.
 DEFAULT_CONTENT_TYPE = "text/html; charset=utf-8"
-DEFAULT_HOMEPAGE = "chain/Minerals";
+DEFAULT_HOMEPAGE = "chain/Mineralscoin";
 DEFAULT_TEMPLATE = """
 <!DOCTYPE html>
 <html lang="en">
